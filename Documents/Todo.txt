@@ -1,0 +1,64 @@
+﻿
+ ■ RenderTarget resizing.
+ ■ Transform, general transform, matrix transform.
+ ■ Drawing context for the Visuals.
+ ■ Implement mouse events on Visuals.
+    ■ Implement mouse down/up.
+    □ Improve forward and backward child itteration.
+    ■ Release mouse events.
+    □ Handle window leave and enter.
+
+ □ Implement a TextBox/Field.
+ 	 □ Behavior
+        □ Select whole-word / continuous-white-space on double click, select line on triple click.
+		□ Typing while range is selected should erase the selection.
+		■ Focus on click.
+		■ Move carret on click.
+		■ Select on click and drag.
+		■ Delete previous character on backspace.
+		■ Delete next character on delete.
+		■ Move character left/right on left/right arrow.
+		□ Move line up/down on down/up arrow.
+     ■ Kyboard events.
+        ■ Char window events.
+        ■ Char routed events.
+        ■ KeyDown/Up window events.
+        ■ KeyDown/Up routed events.
+     ■ Mouse cursors.
+     ■ Focus events.
+     □ Visual invalidation / animations / timer (for the carret)...
+ 
+
+ ■ TextFormat and TextLayout should implement an interface.
+ ■ DirectWriteFactory should be exposed to the UI as interface.
+
+ □ Move to Alignment: Width, Height, MinWidth, MinHeight, MaxWidth, MaxHeight, HorizontalMargin, VerticalMargin.
+
+ ■ Implement the event notification in Interactive.
+
+ □ Implement AffineMatrix Inverse method.
+ □ AffineMatrix cache.
+
+ □ Render invalidate for Visuals.
+
+ □ Dealocation and destructors.
+
+ □ More options on fonts.
+ ■ Layout system.
+
+ ■ Implement a naive Button with hardcoded drawing.
+
+ □ Controls
+    □ Viusal factory, "Control" and "Template", 
+    □ infrastructure to define appearance and visual structure.
+
+ □ Move all projects to C++/CLI.
+
+ □ Test implementing the drawing on OpenGL.
+
+ □ Test implementing a sandboxed runner on .NET 3.5.
+
+ □ Unmanaged to Managed errors reporting.
+
+ □ Blending modes.
+ □ Color transform. (like color tint, multiply etc.)

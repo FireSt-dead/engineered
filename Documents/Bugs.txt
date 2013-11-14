@@ -1,0 +1,1 @@
+ □ Cursor is not updated on "Over". You can mouseover a border of a button and still display arrow. Hand is displayed on second move.

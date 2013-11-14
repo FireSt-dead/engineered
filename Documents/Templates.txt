@@ -1,0 +1,72 @@
+An alternative to the WPF's ControlTemplates will be mandatory.
+Animations done in a VisualStateManager or similar automat will be required.
+However the existing solutions force huge overhead in terms of codebase and declaration.
+
+Following are drafts of declarations... We will need a button, splitbutton, scrollviewer, combobox etc.
+The format will be either in C++ or C# code or XML, custom text probably will not be used
+
+// we may use a CSS3 like selectors... but defined in XML...
+Button
+{
+height:20px;
+background:red;
+}
+
+Button
+{
+width:60px;
+transition:width 1s;
+transition-timing-function: ease in;
+}
+
+Button:hover
+{
+width:200px;
+transition:width 1s;
+transition-timing-function: ease in;
+}
+
+// These work fine for the properties. However we need to be able to set properties on template parts too.
+// Generally there are two things to address - transitions and animations. Transitions simply transfer from one state to another, they
+are frequently interrupted and reversed. Animations on the otherside are composed by frames and are prolongued.
+
+// we need to be able to define templates such as:
+ScrollBar
+{
+	ScrollBarPanel
+	{
+		Button(LineUp)
+		Button(PageUp)
+		Button(Slider)
+		Button(PageDown)
+		Button(LineDown)
+	}
+}
+
+// and buttons for it
+Button <template>
+{
+	Grid
+	{
+		Border { #BorderThickness, #BorderBrush, #Background }
+		// template bound properties..
+		// this should define BorderThickness as shorthand for Border.BorderThickness...
+		// and expose it outside the control for setters...
+		// Probably templatebound proeprties should not be animated?!
+
+		Path { Geometry = <triangle shape>, #Foreground, Stroke = 1 }
+	}
+}
+Button:hover
+{
+	Background: Red;
+}
+Button:pressed
+{
+	Background: Orange 2s ease in;
+
+	// and aside from animating template properties we should be able to animate properties on the template controls
+	Grid.Path.Stroke: 1 2s ease out;
+}
+
+We do not want to overlycomplicate the properties so we do not want a complex dependency-property-like system...
